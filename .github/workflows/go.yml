@@ -33,5 +33,13 @@ jobs:
     - name: Build
       run: go build -v .
 
-    - name: Test
-      run: go test -v .
+    - name: Generate coverage report
+      run: go test `go list ./... | grep -v examples` -coverprofile=coverage.txt -covermode=atomic
+
+    - name: Upload coverage report
+      uses: codecov/codecov-action@v1.0.2
+      with:
+        token: 112ca3f2-a5e3-48b8-b87a-bb68bd55b2eb
+        file: ./coverage.txt
+        flags: unittests
+        name: codecov-umbrella
