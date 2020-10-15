@@ -14,7 +14,7 @@
         },
         "price": {
             "type": "number",
-            "minimum": 0,
+            "minimum": 3,
             "exclusiveMinimum": true
         }
     },
