@@ -6,7 +6,7 @@
     "properties": {
         "id": {
             "description": "The unique identifier for a product",
-            "type": "integer"
+            "type": "number"
         },
         "name": {
             "description": "Name of the product",
@@ -14,8 +14,13 @@
         },
         "price": {
             "type": "number",
-            "minimum": 3,
+            "minimum": 3.4,
             "exclusiveMinimum": true
+        },
+        "description": {
+            "type": "string",
+            "description": "product description",
+            "minLength": 12
         }
     },
     "required": [
